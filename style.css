@@ -1,0 +1,221 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    width: 80%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1600px;
+    padding: 40px;
+    background-color: #f7f4f4;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgb(248, 247, 247);
+    box-sizing: border-box;
+}
+
+h2, h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.kuliner-item {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.kuliner-item h4 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+}
+
+.kuliner-item p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.kuliner-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #9f1551;
+    color: #111111;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn:hover {
+    background-color: #9f1551;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #9f1551;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #9f1551;
+}
+
+.banner-kuliner {
+    background: url("karatonbanggai.jpg") no-repeat center center;
+    background-size: cover;
+    padding-top: 25%;
+    padding-bottom: 25%;
+    color: #0c0b0b
+    ;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #9f1551;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    background: url("karatonbanggai.jpg") no-repeat center center;
+    background-size: cover;
+    color: #080707f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.navigasi {
+    width: 100%;
+    background: #9f1551;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgb(252, 249, 249);
+}
+
+.navigasi a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.navigasi a:hover {
+    background-color: #9f1551;
+    border-radius: 5px;
+}
+
+.dashboard-container {
+    background-color: #fff;
+    color: #191717ee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1600px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgb(250, 250, 250);
+    box-sizing: border-box;
+}
+
+.nav-link {
+    color: #9f1551 !important;
+}
+
+.nav-link:hover {
+    color: #9f1551 !important;
+}
+
+
+
+.satwa-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    box-shadow: 0 0 10px rgb(236, 232, 232);
+}
+.satwa-item {
+    margin-bottom: 20px;
+}
+.satwa-item h4 {
+    margin: 0 0 10px;
+}
+.satwa-item p {
+    margin: 0;
+    
+}
+
+
+
+
+
+

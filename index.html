@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function addText() {
+        const newText = document.createElement("p");
+        newText.textContent = document.getElementById("newText").value;
+        document.getElementById("dynamicContent").appendChild(newText);
+      }
+
+      function removeText() {
+        const dynamicContent = document.getElementById("dynamicContent");
+        if (dynamicContent.lastChild) {
+          dynamicContent.removeChild(dynamicContent.lastChild);
+        }
+      }
+
+      function editText(elementId) {
+        const newText = prompt("Enter the new text:");
+        if (newText) {
+          document.getElementById(elementId).textContent = newText;
+        }
+      }
+
+      function deleteText(elementId) {
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.remove();
+        }
+      }
+
+      function editImage(imageId) {
+        const fileInput = document.getElementById("imageInput");
+        fileInput.setAttribute('data-target', imageId);
+        fileInput.click();
+      }
+
+      function handleImageChange(event) {
+        const imageId = event.target.getAttribute('data-target');
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+          document.getElementById(imageId).src = e.target.result;
+        };
+        
+        if (file) {
+          reader.readAsDataURL(file);
+        }
+      }
+    </script>
+  </head>
+<body>
+
+<!-- File input for image upload -->
+<input type="file" id="imageInput" style="display:none" accept="image/*" onchange="handleImageChange(event)">
+  
+<!--navigasi-->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary-dark shadow-lg fixed-top sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Kabupaten Banggai Laut</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-right" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>   
+        <li class="nav-item">
+          <a class="nav-link" href="#tentang">Tentang</a>
+        </li>  
+        <li class="nav-item">
+          <a class="nav-link" href="#wisata">Wisata</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#makanan">Makanan khas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#satwa">Satwa</a>
+        </li>
+      </ul>
+      </div>
+  </div>
+</nav>
+<!--banner-->
+<div class="Container-fluid banner">
+    <div class="Container text-center">
+        <h3 class="display-1"></h3> 
+        <a href="#tentang">
+          <button type="button" class="btn btn-danger btn-lg">Cek tentang</button>
+        </a>       
+    </div>
+</div>
+
+<!--tentang-->
+<div class="container-fluid pt-5 pb-5">
+  <div class="container ">
+    <h6 class="display-3 text-center" id="tentang">Tentang</h6>
+    <h6>Selamat Datang Di Kabupaten Banggai Laut</h6>
+    <div class="row">
+      <div class="col-md-4">
+        <img id="tentangImage" src="logobanggai.jpg" class="card-img-top" width="400" height="400">
+        <button onclick="editImage('tentangImage')" class="btn btn-sm btn-primary mt-2">Edit Gambar</button>
+      </div>
+      <div class="col-md-8">
+        <div class="clearfix pt-5">
+        <p class="text-justify">
+          Kabupaten Banggai laut adalah salah satu kabupaten yang berada di Provinsi Sulawesi Tengah, Indonesia. Banggai laut merupakan hasil pemekaran dari Kabupaten Banggai Kepulauan yang disahkan dalam sidang paripurna DPR RI pada 14 Desember 2012. Kabupaten Banggai laut memiliki luas wilayah keseluruhan +725,67 km2 dengan jumlah penduduk +63.580 jiwa pada tahun 2012 dan terdiri atas 66 (enam puluh enam) desa atau kelurahan.
+        </p>
+        <p>Kabupaten Banggai Laut merupakan satu di antara ratusan daerah diwilayah kepulauan indonesia yang memiliki kebudayan yang beraneka ragam,yang tidak dimiliki oleh daerah lain, kebudayaan yang beraneka ragam itu diwujudkan melalui upacara upacara adat, kebudayaan yang ada di daerah banggai dari dulu sampai sekarang masih tetap dipertahankan dan dilestarikan oleh masyarakat untuk diwariskan secara turun temurun kepada generasi muda sebagai penerima dan pelanjut kebudayaan tersebut, Banggai laut memiliki sastra lisan yang merupakan salah satu warisan budaya nasional masyarakat banggai salah satunya yaitu lirik lagu tarian putri banggai</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+  <!--wisata-->
+  <div class="container-fluid pt-5 pb-5 bg-light">
+  <div class="container text-center">
+    <h4 class="display-3" id="wisata">Wisata</h4>
+    <div class="row pt-4 gx-4 gy-4">
+      <div class="col-md-4">
+       <div class="card">
+        <img id="wisataImg1" src="lambanganpauno.jpg" class="card-img-top" width="150" height="150">
+            <div class="card-body">
+              <h5 class="card-title" id="wisata1">Pantai Lambangan pauno</h5>
+              <button onclick="editText('wisata1')" class="btn btn-sm btn-primary">Edit</button>
+              <button onclick="deleteText('wisata1')" class="btn btn-sm btn-danger">Delete</button>
+              <button onclick="editImage('wisataImg1')" class="btn btn-sm btn-secondary">Edit Gambar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+        <img id="wisataImg2" src="oyama.jpeg" class="card-img-top" width="150" height="150">
+            <div class="card-body">
+              <h5 class="card-title" id="wisata2">Pantai oyama</h5>
+              <button onclick="editText('wisata2')" class="btn btn-sm btn-primary">Edit</button>
+              <button onclick="deleteText('wisata2')" class="btn btn-sm btn-danger">Delete</button>
+              <button onclick="editImage('wisataImg2')" class="btn btn-sm btn-secondary">Edit Gambar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+       <div class="card">
+        <img id="wisataImg3" src="bontolan.jpg" class="card-img-top" width="150" height="150">
+            <div class="card-body">
+              <h5 class="card-title"  id="wisata3">Pantai Bontolan</h5>
+              <button onclick="editText('wisata3')" class="btn btn-sm btn-primary">Edit</button>
+              <button onclick="deleteText('wisata3')" class="btn btn-sm btn-danger">Delete</button>
+              <button onclick="editImage('wisataImg3')" class="btn btn-sm btn-secondary">Edit Gambar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+       <div class="card">
+        <img id="wisataImg4" src="monosan.jpg" class="card-img-top" width="150" height="150">
+            <div class="card-body">
+              <h5 class="card-title" id="wisata4">Pantai Monosan</h5>
+              <button onclick="editText('wisata4')" class="btn btn-sm btn-primary">Edit</button>
+              <button onclick="deleteText('wisata4')" class="btn btn-sm btn-danger">Delete</button>
+              <button onclick="editImage('wisataImg4')" class="btn btn-sm btn-secondary">Edit Gambar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+       <div class="card">
+        <img id="wisataImg5" src="olesio.jpeg" class="card-img-top" width="150" height="150">
+            <div class="card-body">
+              <h5 class="card-title" id="wisata5">Pantai Olesio</h5>
+              <button onclick="editText('wisata5')" class="btn btn-sm btn-primary">Edit</button>
+              <button onclick="deleteText('wisata5')" class="btn btn-sm btn-danger">Delete</button>
+              <button onclick="editImage('wisataImg5')" class="btn btn-sm btn-secondary">Edit Gambar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+       <div class="card">
+        <img id="wisataImg6" src="padanglaya.jpg" class="card-img-top" width="150" height="150">
+            <div class="card-body">
+              <h5 class="card-title" id="wisata6">Padang Laya</h5>
+              <button onclick="editText('wisata6')" class="btn btn-sm btn-primary">Edit</button>
+              <button onclick="deleteText('wisata6')" class="btn btn-sm btn-danger">Delete</button>
+              <button onclick="editImage('wisataImg6')" class="btn btn-sm btn-secondary">Edit Gambar</button>
+            </div>
+          </div>
+        </div>
+
+  <!--makanan-->
+  <div class="container-fluid pt-5 pb-5 bg-light">
+    <div class="container text-center">
+      <h5 class="display-3" id="makanan">Makanan khas</h5>
+      <div class="row pt-4 gx-4 gy-4">
+        <div class="col-md-4">
+         <div class="card">
+            <img id="makananImg1" src="sinole.jpg" class="card-img-top" width="150" height="150">
+            <div class="card-body">
+              <h5 class="card-title" id="makanan1">Sinole</h5>
+              <button onclick="editText('makanan1')" class="btn btn-sm btn-primary">Edit</button>
+              <button onclick="deleteText('makanan1')" class="btn btn-sm btn-danger">Delete</button>
+              <button onclick="editImage('makananImg1')" class="btn btn-sm btn-secondary">Edit Gambar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+             <img id="makananImg2" src="papeda.jpg" class="card-img-top" width="150" height="150">
+             <div class="card-body">
+               <h5 class="card-title" id="makanan2">Lomos</h5>
+               <button onclick="editText('makanan2')" class="btn btn-sm btn-primary">Edit</button>
+               <button onclick="deleteText('makanan2')" class="btn btn-sm btn-danger">Delete</button>
+               <button onclick="editImage('makananImg2')" class="btn btn-sm btn-secondary">Edit Gambar</button>
+              </div>
+           </div>
+         </div>
+
+         <div class="col-md-4">
+          <div class="card crop-img">
+             <img id="makananImg3" src="kanjoli.jpg" class="card-img-top" width="150" height="150">
+             <div class="card-body">
+               <h5 class="card-title" id="makanan3">Kanjoli</h5>
+               <button onclick="editText('makanan3')" class="btn btn-sm btn-primary">Edit</button>
+               <button onclick="deleteText('makanan3')" class="btn btn-sm btn-danger">Delete</button>
+               <button onclick="editImage('makananImg3')" class="btn btn-sm btn-secondary">Edit Gambar</button>
+              </div>
+           </div>
+         </div>
+
+         <div class="col-md-4">
+          <div class="card">
+             <img id="makananImg4" src="salanggar.jpg" class="card-img-top" width="150" height="150">
+             <div class="card-body">
+               <h5 class="card-title" id="makanan4">Salanggar</h5>           
+               <button onclick="editText('makanan4')" class="btn btn-sm btn-primary">Edit</button>
+               <button onclick="deleteText('makanan4')" class="btn btn-sm btn-danger">Delete</button>
+               <button onclick="editImage('makananImg4')" class="btn btn-sm btn-secondary">Edit Gambar</button>
+              </div>
+           </div>
+         </div>
+
+         <div class="col-md-4">
+          <div class="card">
+             <img id="makananImg5" src="payot.jpg" class="card-img-top" width="150" height="150">
+             <div class="card-body">
+               <h5 class="card-title" id="makanan5">Payot</h5>             
+               <button onclick="editText('makanan5')" class="btn btn-sm btn-primary">Edit</button>
+               <button onclick="deleteText('makanan5')" class="btn btn-sm btn-danger">Delete</button>
+               <button onclick="editImage('makananImg5')" class="btn btn-sm btn-secondary">Edit Gambar</button>
+              </div>
+           </div>
+         </div>
+        
+         <div class="col-md-4">
+          <div class="card">
+             <img id="makananImg6" src="pisang.jpg" class="card-img-top" width="150" height="150">
+             <div class="card-body">
+               <h5 class="card-title" id="makanan6">Pisang Lokapau</h5>
+               <button onclick="editText('makanan6')" class="btn btn-sm btn-primary">Edit</button>
+               <button onclick="deleteText('makanan6')" class="btn btn-sm btn-danger">Delete</button>
+               <button onclick="editImage('makananImg6')" class="btn btn-sm btn-secondary">Edit Gambar</button>
+              </div>
+           </div>
+         </div>
+
+
+      </div>
+    </div>
+  </div>
+  <!--satwa-->
+  <div class="container-fluid pt-5 pb-5">
+    <div class="container">
+      <h2 class="display-3 text-center" id="satwa">Satwa</h2>
+      <p class=text-center>
+      </p>
+      <div class="clearfix pt-5">
+        <img 
+        id="satwa"
+        src="burung.jpg" 
+        class="col-md-6 float-md-end mb-3 crop-img" 
+        width="300" 
+        height="300" 
+        />
+        <p id="satwaText1">Burung maleo(macrocephalon maleo) adalah salah satu satwa dari kabupaten banggai laut yang mempunyai sejarah panjang dikalangan masyarakat burung ini termasuk suku megapodidae,yaitu suku burung yang memiliki kepala berukuran kecil,bulu berwarna hitam </p>
+        <p id="satwaText2">atau coklat,kaki besar dan kuat yang digunakan untuk menggali tanah dan menyingkirkan batuan saat bertelur, meskipun memiliki kaki besaar dan kuat ternyata maleo tidak bisa bertelur di sembarang tempat.
+        </p>
+
+        <button onclick="editText('satwaText1','satwaText2')" class="btn btn-sm btn-primary">Edit</button>
+        <button onclick="deleteText('satwaText1','satwaText2')" class="btn btn-sm btn-danger">Delete</button>
+        <button onclick="editImage('satwa')" class="btn btn-sm btn-secondary">Edit Gambar</button>
+      </div>
+    </div>
+  </div>
+  <!--tim-->
+  <div class="container-fluid pt-5 pb-5 bg-light">
+    <div class="cotainer text-centter">
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-B4gt1jrGC7Jh4IqPlCfpGQcWeKtJHRGa6N6HTLMI4aIzbV7KoLkO2GYpxHhQj6vK" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</div>
+
+</body>
+</html>
