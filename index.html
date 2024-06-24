@@ -23,12 +23,12 @@
         firebase.initializeApp(firebaseConfig);
 
         function login() {
-            var email = document.getElementById('email').value;
+            var username = document.getElementById('username').value;
             var password = document.getElementById('password').value;
-            firebase.auth().signInWithEmailAndPassword(email, password)
+            firebase.auth().signInWithUsernameAndPassword(username, password)
                 .then((userCredential) => {
                     var user = userCredential.user;
-                    alert('Login successful: ' + user.email);
+                    alert('Login successful: ' + user.username);
                     // Hide login form and show content
                     document.getElementById('loginForm').style.display = 'none';
                     document.getElementById('content').style.display = 'block';
@@ -91,7 +91,16 @@
 
 <!-- File input for image upload -->
 <input type="file" id="imageInput" style="display:none" accept="image/*" onchange="handleImageChange(event)">
-  
+
+    <!-- Login form -->
+<div id="loginForm" class="container text-center mt-5">
+    <h1>Login</h1>
+    <input type="username" id="username" class="form-control mb-2" placeholder="Username">
+    <input type="password" id="password" class="form-control mb-2" placeholder="Password">
+    <button onclick="login()" class="btn btn-primary">Login</button>
+</div>
+    <!-- Content -->
+<div id="content" style="display:none">
 <!--navigasi-->
   <nav class="navbar navbar-expand-lg bg-body-tertiary-dark shadow-lg fixed-top sticky-top">
   <div class="container-fluid">
